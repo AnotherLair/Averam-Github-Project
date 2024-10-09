@@ -1,13 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://be158mvpnmj0h"]
+[gd_scene load_steps=4 format=3 uid="uid://be158mvpnmj0h"]
 
 [ext_resource type="Script" path="res://character_body_2d.gd" id="1_2udtq"]
 [ext_resource type="Texture2D" uid="uid://b3ywo6mg0dwvg" path="res://Astronaut_main_character_idle_down.png" id="2_gj4xa"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gmglt"]
-size = Vector2(45, 86)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_813mr"]
-radius = 23.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7817d"]
+radius = 21.0
+height = 134.0
 
 [node name="Node2D" type="Node2D"]
 
@@ -15,13 +13,9 @@ radius = 23.0
 script = ExtResource("1_2udtq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(570.5, 185)
-shape = SubResource("RectangleShape2D_gmglt")
+position = Vector2(573, 198)
+shape = SubResource("CapsuleShape2D_7817d")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(571, 248)
-shape = SubResource("CircleShape2D_813mr")
-
-[node name="Icon" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(571, 205)
+[node name="Icon" type="Sprite2D" parent="CharacterBody2D/CollisionShape2D"]
+position = Vector2(0, -2)
 texture = ExtResource("2_gj4xa")
